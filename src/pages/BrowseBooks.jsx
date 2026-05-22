@@ -4,20 +4,20 @@ import { useParams } from "react-router-dom"
 import { useState } from "react"
 
 function BrowseBooks() {
-  const books=useSelector((state)=>state.books)
+  const books = useSelector((state) => state.books)
   const { category } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
   const filteredBooks = books.filter((book) => {
-  const matchesCategory = category
-    ? book.category === category
-    : true
+    const matchesCategory = category
+      ? book.category === category
+      : true
 
-  const matchesSearch =
-    book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    book.author.toLowerCase().includes(searchTerm.toLowerCase())
+    const matchesSearch =
+      book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      book.author.toLowerCase().includes(searchTerm.toLowerCase())
 
-  return matchesCategory && matchesSearch
-})  
+    return matchesCategory && matchesSearch
+  })
   return (
     <section className="min-h-screen bg-zinc-950 text-white p-10">
       <h1 className="text-5xl font-bold mb-10">
@@ -32,14 +32,21 @@ function BrowseBooks() {
       />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {
-          filteredBooks.map((book) => (
-            <BookCard
-              key={book.id}
-              title={book.title}
-              description={book.description}
-              author={book.author}
-            />
-          ))
+          filteredBooks.length > 0 ? (
+            filteredBooks.map((book) => (
+              <BookCard
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                author={book.author}
+                description={book.description}
+              />
+            ))
+          ) : (
+            <p className="text-zinc-400 text-xl">
+              No books found.
+            </p>
+          )
         }
       </div>
     </section>

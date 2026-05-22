@@ -58,7 +58,7 @@ const AddBook = () => {
             placeholder="Enter book title"
             value={formData.title}
             onChange={handleChange}
-            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none"
+            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none focus:ring-2 focus:ring-[#FFB347]"
           />
           <input
             type="text"
@@ -66,14 +66,14 @@ const AddBook = () => {
             placeholder="Enter author name"
             value={formData.author}
             onChange={handleChange}
-            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none"
+            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none focus:ring-2 focus:ring-[#FFB347]"
           />
           <textarea
             name="description"
             placeholder="Enter book description"
             value={formData.description}
             onChange={handleChange}
-            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none h-32 resize-none"
+            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none focus:ring-2 focus:ring-[#FFB347] h-32 resize-none"
           />
           <input
             type="text"
@@ -81,7 +81,7 @@ const AddBook = () => {
             placeholder="Enter category"
             value={formData.category}
             onChange={handleChange}
-            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none"
+            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none focus:ring-2 focus:ring-[#FFB347]"
           />
           <input
             type="number"
@@ -89,7 +89,7 @@ const AddBook = () => {
             placeholder="Enter rating"
             value={formData.rating}
             onChange={handleChange}
-            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none"
+            className="bg-zinc-800 px-5 py-3 rounded-lg outline-none focus:ring-2 focus:ring-[#FFB347]"
           />
           <button
             type="submit"

@@ -4,18 +4,18 @@
 
     const Navbar = () => {
         return (
-            <nav className="flex items-center justify-between px-8 py-4 bg-black text-[#FFB347]">
+            <nav className="flex flex-col md:flex-row items-center justify-between gap-6 px-8 py-4 bg-black text-[#FFB347]">
                 <div className='w-40'>
                     <img src={logo} alt="logo" />
                 </div>
-                <div className='flex gap-6 text-lg font-medium'>
-                    <Link className='hover:text-white duration-200' to="/">Home</Link>
+                <div className='flex flex-wrap justify-center gap-6 text-lg font-medium'>
+                    <Link className='hover:text-white duration-300 hover:scale-105 transition-all' to="/">Home</Link>
 
-                    <Link className='hover:text-white duration-200' to="/books">
+                    <Link className='hover:text-white duration-300 hover:scale-105 transition-all' to="/books">
                         Browse Books
                     </Link>
 
-                    <Link className='hover:text-white duration-200' to="/add-book">
+                    <Link className='hover:text-white duration-300 hover:scale-105 transition-all' to="/add-book">
                         Add Book
                     </Link>
                 </div>
