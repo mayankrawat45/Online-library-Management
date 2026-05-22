@@ -24,6 +24,10 @@ const router = createBrowserRouter([
         element: <BookDetails />
       },
       {
+        path: "books",
+        element: <BrowseBooks />
+      },
+      {
         path: "add-book",
         element: <AddBook />
       }

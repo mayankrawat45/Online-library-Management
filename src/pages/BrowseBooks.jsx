@@ -1,11 +1,12 @@
-import books from "../data/books"
+import { useSelector } from "react-redux"
 import BookCard from "../components/BookCard"
 import { useParams } from "react-router-dom"
 import { useState } from "react"
 
 function BrowseBooks() {
+  const books=useSelector((state)=>state.books)
   const { category } = useParams();
-  const [searchTerm, setSearchTerm] = useState("")
+  const [searchTerm, setSearchTerm] = useState("");
   const filteredBooks = books.filter((book) => {
   const matchesCategory = category
     ? book.category === category

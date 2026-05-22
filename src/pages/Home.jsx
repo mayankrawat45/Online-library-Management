@@ -1,9 +1,10 @@
 import React from 'react'
 import BookCard from '../components/BookCard'
-import books from '../data/books'
+import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 const Home = () => {
+    const books=useSelector((state)=>state.books)
     return (
         <section className="min-h-screen bg-zinc-950 text-white px-10 py-16">
             <div className="max-w-4xl">

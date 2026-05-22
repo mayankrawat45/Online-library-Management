@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom"
-import books from "../data/books"
+import { useSelector } from "react-redux"
 
 function BookDetails() {
-
+  const books=useSelector(state=>state.books)
   const { id } = useParams();
   const book = books.find((book) => book.id === Number(id));
   return (
