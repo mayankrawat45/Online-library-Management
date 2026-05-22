@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addBook } from "../redux/bookSlice"
+import { useNavigate } from "react-router-dom"
 
 const AddBook = () => {
   const [formData, setFormData] = useState({
@@ -11,11 +12,23 @@ const AddBook = () => {
     category: "",
     rating: ""
   })
+  const navigate = useNavigate()
 
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (
+      !formData.title ||
+      !formData.author ||
+      !formData.description ||
+      !formData.category ||
+      !formData.rating
+    ) {
+      alert("Please fill all fields")
+      return
+    }
 
     dispatch(
       addBook({
@@ -23,6 +36,7 @@ const AddBook = () => {
         ...formData
       })
     )
+    navigate("/books")
   }
 
   const handleChange = (e) => {
