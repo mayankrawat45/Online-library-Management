@@ -1,6 +1,7 @@
 import React from 'react'
 import BookCard from '../components/BookCard'
 import books from '../data/books'
+import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
@@ -22,25 +23,25 @@ const Home = () => {
                 </h2>
 
                 <div className="flex gap-4 flex-wrap">
-                    <button className="bg-[#FFB347] text-black px-6 py-3 rounded-full font-medium">
+                    <Link to='/books/Fiction' className="bg-[#FFB347] text-black px-6 py-3 rounded-full font-medium">
                         Fiction
-                    </button>
+                    </Link>
 
-                    <button className="bg-zinc-800 px-6 py-3 rounded-full">
+                    <Link to='/books/Non-Fiction' className="bg-zinc-800 px-6 py-3 rounded-full">
                         Non-Fiction
-                    </button>
+                    </Link>
 
-                    <button className="bg-zinc-800 px-6 py-3 rounded-full">
+                    <Link to='/books/Sci-Fi' className="bg-zinc-800 px-6 py-3 rounded-full">
                         Sci-Fi
-                    </button>
+                    </Link>
 
-                    <button className="bg-zinc-800 px-6 py-3 rounded-full">
+                    <Link to='/books/Mystery' className="bg-zinc-800 px-6 py-3 rounded-full">
                         Mystery
-                    </button>
+                    </Link>
 
-                    <button className="bg-zinc-800 px-6 py-3 rounded-full">
+                    <Link to='/books/History' className="bg-zinc-800 px-6 py-3 rounded-full">
                         History
-                    </button>
+                    </Link>
                 </div>
             </div>
             <div className="mt-20">
