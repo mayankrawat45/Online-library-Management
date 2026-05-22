@@ -1,5 +1,6 @@
 import React from 'react'
 import BookCard from '../components/BookCard'
+import books from '../data/books'
 
 const Home = () => {
     return (
@@ -49,11 +50,15 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                    <BookCard
-                        title="Atomic Habits"
-                        author="James Clear"
-                        description="A practical guide to building good habits and breaking bad ones."
-                    />
+                    {
+                        books.map((book) => {
+                            return <BookCard
+                                title={book.title}
+                                author={book.author}
+                                description={book.description}
+                            />
+                        })
+                    }
 
                 </div>
             </div>
